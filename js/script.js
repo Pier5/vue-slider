@@ -8,7 +8,6 @@ const app = new Vue({
     el : '#root',
     data : {
         activeIndex : 0,
-        timer : true,
         arrSlides : [
             {
                 title : 'Svezia',
@@ -46,7 +45,10 @@ const app = new Vue({
         },
         slideShow() {
             this.timer = setInterval(this.next, 3000);
-          },
+        },
+        stopSlideShow() {
+            clearInterval(this.timer);
+        },
     },
     created() {
         this.slideShow();
