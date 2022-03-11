@@ -1,7 +1,14 @@
+// Bonus:
+// 2- applicare l'autoplay allo slider: ogni 3 secondi, cambia immagine automaticamente
+// 3- quando il mouse va in hover sullo slider, bloccare l'autoplay e farlo riprendere quando 
+// esce
+
+
 const app = new Vue({
     el : '#root',
     data : {
         activeIndex : 0,
+        timer : null,
         arrSlides : [
             {
                 title : 'Svezia',
@@ -37,5 +44,11 @@ const app = new Vue({
         previous() {
             this.activeIndex == 0 ? this.activeIndex = this.arrSlides.length - 1 : this.activeIndex--;
         },
-    }
+        slideShow: function() {
+            this.timer = setInterval(this.next, 3000);
+          },
+    },
+    created() {
+        this.slideShow();
+    },
 })
