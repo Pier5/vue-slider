@@ -8,7 +8,7 @@ const app = new Vue({
     el : '#root',
     data : {
         activeIndex : 0,
-        timer : null,
+        timer : true,
         arrSlides : [
             {
                 title : 'Svezia',
@@ -44,7 +44,7 @@ const app = new Vue({
         previous() {
             this.activeIndex == 0 ? this.activeIndex = this.arrSlides.length - 1 : this.activeIndex--;
         },
-        slideShow: function() {
+        slideShow() {
             this.timer = setInterval(this.next, 3000);
           },
     },
