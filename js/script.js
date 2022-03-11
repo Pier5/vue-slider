@@ -29,6 +29,13 @@ const app = new Vue({
                 text : 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
             },
         ],
-        
+    },
+    methods : {
+        next() {
+            this.activeIndex < this.arrSlides.length - 1 ? this.activeIndex++ : this.activeIndex = 0;
+        },
+        previous() {
+            this.activeIndex == 0 ? this.activeIndex = this.arrSlides.length - 1 : this.activeIndex--;
+        },
     }
 })

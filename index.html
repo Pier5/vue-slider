@@ -20,12 +20,12 @@
 			</div>
 
 			<div class="thumbs">
-				<div v-for="(thumb, index) in arrSlides" class="thumb">
+				<div v-for="(thumb, index) in arrSlides" @click="activeIndex = index" class="thumb" :class="index == activeIndex ? 'active' : ''">
 					<img :src="'img/' + thumb.img" :alt="thumb.title">
 				</div>
 
-				<button class="btn-control btn-previus">&and;</button>
-				<button class="btn-control btn-next">&or;</button>
+				<button @click="previous" class="btn-control btn-previous">&and;</button>
+				<button @click="next" class="btn-control btn-next">&or;</button>
 			</div>
 		</div>
 	</div>
